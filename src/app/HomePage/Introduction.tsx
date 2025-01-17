@@ -33,12 +33,12 @@ export default function Introduction() {
                     <div className="flex justify-center">
                         <Tag>Introducing ABResh Events</Tag>
                     </div>
-                    <div className="text-white text-3xl md:text-5xl lg:text-7xl text-center font-medium mt-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-0 overflow-hidden">
+                    <div className="text-white/90 text-3xl md:text-5xl lg:text-7xl text-center font-semibold mt-11 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-0 overflow-hidden">
                         <span>Your creative process deserve better.</span>{" "}
                         <span className="">
                             {words.map((word, wordIndex) => (
                                 <span key={wordIndex} className={twMerge( "transition duration-500 text-white/15",
-                                    wordIndex < currentWord && 'text-white')}>{`${word} `}</span>
+                                    wordIndex < currentWord && 'text-white/90')}>{`${word} `}</span>
                             ))}
                         </span>
                         <span className="font-extrabold bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text [-webkit-background-clip:text] block">

@@ -32,7 +32,7 @@ const HeroSection: React.FC = () => {
                     Every Step of the Way
                 </h1>
                 <p className="mt-3 text-lg lg:text-xl max-w-4xl mx-auto bg-gradient-to-r  from-white via-white to-[#FCA33D] text-transparent bg-clip-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text
                 </p>
             </div>
         </section>

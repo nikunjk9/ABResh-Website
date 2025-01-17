@@ -1,18 +1,7 @@
 import Image from 'next/image';
 import daljit from '@/assets/images/Daljit.png'
 
-// const teamMembers = [
-//     { name: 'Daljit Singh', img: '/images/daljit.png' },
-//     { name: 'Shilpa Roy', img: '/images/shilpa.png' },
-//     { name: 'Sihan Singh', img: '/images/sihan.png' },
-//     { name: 'Daljeet Kaur', img: '/images/daljeet.png' },
-//     { name: 'Sharmila Roy', img: '/images/sharmila.png' },
-//     { name: 'Jitendar Singh', img: '/images/jitendar.png' },
-//     { name: 'Ganpat Sharma', img: '/images/ganpat.png' },
-//     { name: 'Sukanya Singhaniya', img: '/images/sukanya.png' },
-//     { name: 'Jassu Sharma', img: '/images/jassu.png' },
-//     { name: 'Nittya John', img: '/images/nittya.png' },
-// ];
+
 const teamMembers = [
     { name: 'Daljit Singh', img: daljit },
     { name: 'Shilpa Roy', img: daljit },

@@ -69,7 +69,7 @@ export const Gallery: React.FC = () => {
       id="our-gallery" 
       className={`relative bg-black w-full transition-opacity duration-1000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
     >
-      <div className="container mx-auto px-4 py-16 relative overflow-hidden">
+      <div className="container mx-auto px-6 md:px-4 py-10 md:py-14">
         <div className="absolute inset-0 bg-black animate-gradient" />
         
         <div className={`text-center mb-8 sm:mb-10 transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -77,8 +77,8 @@ export const Gallery: React.FC = () => {
             Our Gallery
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-700 group-hover:w-full" />
           </h2>
-          <p className="max-w-xl mx-auto text-gray-400 text-sm sm:text-base md:text-lg">
-            Explore the memorable moments from our events
+          <p className="max-w-xl mx-auto text-gray-400 text-base sm:text-xl px-4">
+            Explore the memorable moments from our events, and experience the magic.
           </p>
         </div>
 

@@ -87,13 +87,13 @@ export const FAQSection: React.FC = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 px-6 md:px-6 lg:px-0">
         {/* Image Box */}
-        <div className="flex justify-center items-center bg-gradient-to-b from-purple-900 to-purple-400 rounded-lg overflow-hidden md:w-3/4 lg:w-100% mx-auto">
+        <div className="flex justify-center items-center bg-gradient-to-b from-purple-900 to-purple-400 rounded-lg overflow-hidden md:w-3/4 lg:w-100% mx-auto hover:scale-105 transition duration-700 ease-in-out">
           <Image
             src={Read.src}
             alt="FAQ Image"
             width={1000}
             height={1000}
-            className="object-contain w-3/4 md:w-full" // Ensure image doesn't take up full width on small screens
+            className="object-contain w-3/4 md:w-full " // Ensure image doesn't take up full width on small screens
           />
         </div>
 

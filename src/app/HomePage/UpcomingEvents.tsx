@@ -110,10 +110,10 @@ const UpcomingEvents = () => {
   return (
     <div className="relative bg-black text-white overflow-hidden py-10 md:py-14">
       <div className="text-center mb-8 sm:mb-10">
-        <h2 className="text-4xl sm:text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 ">
+        <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight">
           Upcoming Events
         </h2>
-        <p className="mx-auto text-gray-400 text-sm sm:text-base md:text-lg px-8">
+        <p className="max-w-xl mx-auto text-gray-400 text-base sm:text-xl px-8">
           Moments that inspire, connections that last—join us for an event to remember!
         </p>
       </div>

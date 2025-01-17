@@ -34,21 +34,20 @@ const OurWork: React.FC = () => {
   ];
 
   return (
-    <section id="what-we-do" className="bg-black text-white py-8 lg:py-16  sm:px-16">
+    <section id="what-we-do" className="bg-black text-white py-10 lg:py-20  sm:px-16">
       <div className="w-full bg-black/90 py-10 sm:py-4 px-4">
         <div className="container mx-auto">
-          <h2 className="text-center font-bold text-4xl md:text-5xl lg:text-6xl tracking-tighter">
+          <h2 className="text-center font-bold text-4xl md:text-6xl tracking-tighter">
             Our Work
           </h2>
           <div className="max-w-xl mx-auto">
-            <p className="text-center mt-5 text-md lg:text-lg px-4 text-white/70">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-              sint. Velit officia consequat duis enim velit mollit.
+            <p className="text-center mt-4 text-base md:text-xl px-2 text-gray-400">
+              We transform moments into memories and events into unforgettable experiences, bringing your vision to life.
             </p>
           </div>
 
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 lg:px-">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 lg:px-6">
             {workItems.map((item, index) => {
               const isWide = index === 0;
               const isTall = index === 1;

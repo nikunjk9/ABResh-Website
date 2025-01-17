@@ -16,9 +16,9 @@ const OurWork = () => {
                         Our Work
                     </h2>
                     <p className="text-white text-lg lg:max-w-4xl">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
                         standard dummy text ever since the 1500s, when an unknown printer took Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                        printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
                     </p>
                 </div>
 

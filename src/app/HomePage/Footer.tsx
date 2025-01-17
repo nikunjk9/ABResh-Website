@@ -2,8 +2,25 @@
 
 import React, { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Logo from "@/assets/images/logo.png";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
+
+const navLinks = [
+    { name: "Who we are", path: "#who-we-are" },
+    { name: "What we do", path: "#what-we-do" },
+    { name: "Events", path: "/EventsPage" },
+    { name: "Technology", path: "/TechnologyPage" },
+    { name: "About Us", path: "/AboutUsPage" },
+    { name: "Contact us", path: "/ContactUsPage" }
+];
+
+const policyLinks = [
+    { name: "Terms", path: "/terms" },
+    { name: "Privacy", path: "/privacy" },
+    { name: "Cookies", path: "/cookies" },
+    { name: "Refund", path: "/refund" }
+];
 
 const Footer: FC = () => {
     return (
@@ -15,17 +32,22 @@ const Footer: FC = () => {
                     
                     {/* Logo */}
                     <div className="pb-2">
-                        <Image src={Logo} alt="Logo" width={90} height={90} priority />
+                        <Link href="/">
+                            <Image src={Logo} alt="Logo" width={90} height={90} priority />
+                        </Link>
                     </div>
 
                     {/* Navigation Links */}
                     <div className="w-full px-4 md:px-0">
                         <ul className="flex flex-wrap items-center justify-center gap-3 md:gap-0 md:space-x-6 text-sm md:text-base font-medium">
-                            {["Who we are", "What we do", "Services", "Gallery", "Press", "Contact us"].map((link, idx) => (
+                            {navLinks.map((link, idx) => (
                                 <li key={idx}>
-                                    <a href="#" className="hover:text-gray-400">
-                                        {link}
-                                    </a>
+                                    <Link 
+                                        href={link.path}
+                                        className="hover:text-gray-400 transition duration-200"
+                                    >
+                                        {link.name}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -57,11 +79,14 @@ const Footer: FC = () => {
                 <div className="flex flex-col md:flex-row items-center justify-between text-xs md:text-sm text-gray-500 mb-2">
                     <p className="text-gray-600 text-center md:text-left">© 2024 Abreshevents. All rights reserved.</p>
                     <ul className="flex flex-wrap justify-center md:justify-end gap-3 md:gap-0 md:space-x-4 mt-3 md:mt-0">
-                        {["Terms", "Privacy", "Cookies", "Refund"].map((policy, idx) => (
+                        {policyLinks.map((policy, idx) => (
                             <li key={idx}>
-                                <a href="#" className="hover:text-gray-200">
-                                    {policy}
-                                </a>
+                                <Link 
+                                    href={policy.path}
+                                    className="hover:text-gray-200 transition duration-200"
+                                >
+                                    {policy.name}
+                                </Link>
                             </li>
                         ))}
                     </ul>

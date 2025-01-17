@@ -110,7 +110,7 @@ export const Services = () => {
                         Our Services
                         <Sparkles className="text-yellow-400 animate-pulse" size={48} />
                     </h2>
-                    <p className="max-w-xl mx-auto text-base sm:text-lg md:text-xl text-gray-400">
+                    <p className="max-w-xl mx-auto text-base sm:text-xl text-gray-400">
                         Transforming your digital presence with cutting-edge strategies and innovative communication solutions.
                     </p>
                 </motion.div>

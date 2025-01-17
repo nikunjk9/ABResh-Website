@@ -1,3 +1,5 @@
+'use client';
+
 import ScrollToTop from "@/Components/ScrollToTop";
 import { Banner } from "../HomePage/Banner";
 import ContactUs from "../HomePage/ContactUs";
@@ -14,27 +16,39 @@ import LogoTicker from "./Logoticker";
 import OurWork from "./OurWork";
 import { PublicRelation } from "./PublicRelation";
 import WhyChooseUs from "./WhyChooseUs";
+import { useEffect } from "react";
 
-export default function Home() {
-    return (
+export default function EventsPage() {
+  useEffect(() => {
+      // Get the hero section element
+      const heroSection = document.getElementById('hero-section');
+      
+      // Scroll to hero section when component mounts
+      if (heroSection) {
+          heroSection.scrollIntoView({ behavior: 'instant' });
+      }
+  }, []); // Empty dependency array means this runs once when component mounts
+
+  return (
       <div>
-        <Banner/>
-        <Navbar/>
-        <HeroSection/>
-        <LogoTicker/>
-        <OurWork/>
-        <DigitalMarketing/>
-        <Gallery/>
-        <PublicRelation/>
-        <TopEvents/>
-        <UpcomingEvents/>
-        <WhyChooseUs/>
-        <FAQSection/>
-        <ContactUs/>
-        <NewsletterSignup/>
-        <Footer/>
-        <ScrollToTop/>
+          <Navbar />
+          {/* Add id to the hero section wrapper */}
+          <div id="hero-section">
+              <HeroSection />
+          </div>
+          <LogoTicker />
+          <OurWork />
+          <DigitalMarketing />
+          <Gallery />
+          <PublicRelation />
+          <TopEvents />
+          <UpcomingEvents />
+          <WhyChooseUs />
+          <FAQSection />
+          <ContactUs />
+          <NewsletterSignup />
+          <Footer />
+          <ScrollToTop />
       </div>
-    );
-  }
-  
+  );
+}

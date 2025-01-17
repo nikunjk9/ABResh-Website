@@ -83,18 +83,18 @@ export const DigitalMarketing = () => {
     }, [selectedCardIndex, isHovered]);
 
     return (
-        <section className="py-12 overflow-x-clip md:-mt-8 ml-3 md:ml-12 md:mr-6">
+        <section className="py-12 overflow-x-clip -mt-4 md:-mt-8 ml-3 md:ml-12 md:mr-6">
             <div className="container py-8 text-white">
                 <h2 className="text-center text-white font-bold text-4xl md:text-5xl lg:text-6xl tracking-tighter">
                     Digital Marketing
                 </h2>
                 <div className="max-w-xl mx-auto">
-                    <p className="text-center mt-5 text-md lg:text-lg px-4 text-white/70">
+                    <p className="text-center mt-5 text-base lg:text-lg px-3 text-white/70">
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
                         sint. Velit officia consequat duis enim velit mollit.
                     </p>
                 </div>
-                <div className="mt-36 lg:mt-36 flex ">   
+                <div className="mt-32 flex ">   
                     <div className="flex flex-none gap-8">
                         {cardData.map(({ image, title, description, color }) => (
                             <div

@@ -10,7 +10,7 @@ const HeroSection: React.FC = () => {
                 Frequently Asked Questions 
             </h1>
             <p className="mt-3 text-lg lg:text-xl max-w-4xl mx-auto text-white">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text
             </p>
         </div>
     </section>

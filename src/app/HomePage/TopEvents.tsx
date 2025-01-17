@@ -138,10 +138,10 @@ export const TopEvents: React.FC = () => {
     <section className='relative bg-black w-full overflow-hidden'>
       <div className='w-full px-4 py-16 md:py-20 '>
         <div className='text-center mb-8 sm:mb-10'>
-          <h2 className='text-4xl sm:text-4xl md:text-6xl font-bold text-white mb-4'>
+          <h2 className='text-4xl md:text-6xl font-bold text-white mb-4'>
             Top Events
           </h2>
-          <p className='max-w-xl mx-auto text-gray-400 text-sm sm:text-base md:text-lg px-4'>
+          <p className='max-w-xl mx-auto text-gray-400 text-base sm:text-xl px-4'>
             Discover and explore about our most prestigious and impactful events ever held.
           </p>
         </div>

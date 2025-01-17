@@ -73,18 +73,18 @@ export const PublicRelation = () => {
     });
     const marginTop = useTransform(scrollYProgress, [0, 1], [0, 123]);
     return (
-        <section className="lg:px-28 py-12">
+        <section className="lg:px-28 py-10 mt-2">
             <div className="container py-8 text-white">
-                <h2 className="text-center text-white font-bold text-4xl sm:text-6xl tracking-tighter">
+                <h2 className="text-center text-white font-bold text-4xl md:text-6xl tracking-tighter">
                     Public Relations
                 </h2>
-                <div className="max-w-3xl mx-auto">
-                    <p className="text-center mt-5 text-md lg:text-lg px-4 text-gray-400">
+                <div className="max-w-2xl mx-auto">
+                    <p className="text-center mt-5 text-base md:text-xl px-2 text-gray-400">
                     Public relations (PR) is the art of managing communication between an organization and its audience. 
                     It involves creating and maintaining a positive image. 
                     </p>
                 </div>
-                <div className="mt-16 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 px-2 md:px-0">
                     <div className="flex flex-col gap-8">
                         {leftColumnCards.map(({ title, description, category }, cardIndex) => (
                                 <Card 

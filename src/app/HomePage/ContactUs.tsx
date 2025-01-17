@@ -45,16 +45,16 @@ const ContactUs = () => {
                             Contact Us
                         </h2>
                         <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-2 px-4  md:px-0">
-                            Have questions or need assistance? Contact us today—because we're here to make things happen for you!
+                            Have questions or need assistance? Contact us today—because we&apos;re here to make things happen for you!
                         </p>
                     </div>
                     {/* Social Media Icons */}
                     <div className="flex flex-wrap justify-center lg:justify-start space-x-4 mt-4 md:mt-6 lg:mt-8">
-                        <a
+                    <a
                             href="https://www.youtube.com/@ABReshEvents"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-4 md:text-xl md:p-6  rounded-full border bg-white/5 border-white/50 text-lg  transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
+                            className="p-4 rounded-full border bg-white/5 border-white/50 text-lg md:text-xl transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
                             aria-label="YouTube"
                         >
                             <FaYoutube />
@@ -63,7 +63,7 @@ const ContactUs = () => {
                             href="https://www.linkedin.com/company/abresh-events/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-4 text-lg md:text-2xl md:p-6 rounded-full border bg-white/5 border-gray-600  transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
+                            className="p-4 rounded-full border bg-white/5 border-gray-600 text-lg md:text-xl transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
                             aria-label="LinkedIn"
                         >
                             <FaLinkedin />
@@ -72,7 +72,7 @@ const ContactUs = () => {
                             href="https://x.com/ABReshEvents"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-4 md:text-2xl md:p-6  rounded-full border bg-white/5 border-gray-600 text-lg  transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
+                            className="p-4 rounded-full border bg-white/5 border-gray-600 text-lg md:text-xl transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
                             aria-label="Twitter"
                         >
                             <FaTwitter />
@@ -81,7 +81,7 @@ const ContactUs = () => {
                             href="https://www.facebook.com/abreshevents/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-4 md:text-2xl md:p-6  rounded-full border bg-white/5 border-gray-600 text-lg  transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
+                            className="p-4 rounded-full border bg-white/5 border-gray-600 text-lg md:text-xl transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
                             aria-label="Facebook"
                         >
                             <FaFacebook />
@@ -90,7 +90,7 @@ const ContactUs = () => {
                             href="https://www.instagram.com/abresh_events/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-4 md:text-2xl md:p-6  rounded-full border bg-white/5 border-gray-600 text-lg transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
+                            className="p-4 rounded-full border bg-white/5 border-gray-600 text-lg md:text-xl transition transform duration-300 hover:scale-110 hover:bg-purple-600 hover:border-purple-600"
                             aria-label="Instagram"
                         >
                             <FaInstagram />

@@ -18,7 +18,7 @@ const AskSection = () => {
                 <div className="space-y-6 text-center">
                     {/* Heading with responsive font sizes and spacing */}
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white">
-                        Don't Find The Answer?
+                        Don&apos;t Find The Answer?
                         <span className="block mt-2 lg:inline lg:mt-0"> Contact Us Now</span>
                     </h2>
                     

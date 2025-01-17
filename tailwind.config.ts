@@ -18,11 +18,50 @@ const config: Config = {
       },
       animation: {
         'gradient-move': 'gradient-move 5s ease infinite',
+        'float': 'float 100s linear infinite',
+        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+        'glow-spread': 'glowSpread 3s ease-in-out infinite'
       },
       keyframes: {
         'gradient-move': {
           '0%, 100%': { 'background-position': '0% 50%' },
           '50%': { 'background-position': '100% 50%' },
+        },
+        float: {
+          '0%': { 
+            transform: 'translateY(0)',
+            opacity: '0'
+          },
+          '10%': {
+            opacity: '1'
+          },
+          '90%': {
+            opacity: '1'
+          },
+          '100%': { 
+            transform: 'translateY(-100vh)',
+            opacity: '0'
+          }
+        },
+        pulseGlow: {
+          '0%, 100%': { 
+            opacity: '0.4',
+            transform: 'scale(1)'
+          },
+          '50%': { 
+            opacity: '1',
+            transform: 'scale(1.5)'
+          }
+        },
+        glowSpread: {
+          '0%, 100%': { 
+            opacity: '0',
+            transform: 'scale(1)'
+          },
+          '50%': { 
+            opacity: '0.5',
+            transform: 'scale(2)'
+          }
         }
       }
     },
@@ -31,4 +70,3 @@ const config: Config = {
 };
 
 export default config;
-

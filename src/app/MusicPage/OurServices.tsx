@@ -59,7 +59,7 @@ export default function OurServices() {
                 <div className="flex flex-col justify-start items-start">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Our Services</h2>
                     <p className="text-gray-400 text-xl mb-10">
-                        Lorem Ipsum has been the industry's standard dummy text. <br />Lorem Ipsum
+                        Lorem Ipsum has been the industry&apos;s standard dummy text. <br />Lorem Ipsum
                         is simply dummy text of the printing and typesetting industry.
                     </p>
                 </div>
