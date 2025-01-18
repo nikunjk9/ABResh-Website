@@ -82,7 +82,7 @@ export const FAQSection: React.FC = () => {
   return (
     <section className="relative py-20 md:py-24 bg-gradient-to-b from-black to-[#121212]  text-white">
       <h2 className="text-4xl md:text-6xl font-bold text-white text-center lg:px-8 mb-10">
-        Frequently Asked Questions
+        Any Questions?
       </h2>
 
       <div className="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 px-6 md:px-6 lg:px-0">

@@ -67,7 +67,7 @@ export const Gallery: React.FC = () => {
           <h2 className='text-4xl sm:text-4xl md:text-6xl font-bold text-white mb-4 md:mb-4'>
             Our Gallery
           </h2>
-          <p className='max-w-xl mx-auto text-gray-400 text-base sm:text-xl px-4'>
+          <p className='max-w-xl mx-auto text-gray-400 text-base sm:text-lg px-4'>
             Explore the memorable moments from our events and experience the vibe.
           </p>
         </div>

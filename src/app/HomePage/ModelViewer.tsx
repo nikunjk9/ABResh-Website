@@ -272,7 +272,7 @@ const ModelViewer: React.FC = () => {
             Everything we do
           </h2>
           <div className="max-w-xl mx-auto">
-            <p className="text-center mt-5 text-base sm:text-xl text-white/70">
+            <p className="text-center mt-5 text-base sm:text-lg text-white/70">
               We are passionate about delivering excellence in everything we do, creating an impact on our customers and the world.
             </p>
           </div>

@@ -146,7 +146,7 @@ const OurWork = () => {
   ), []);
 
   const servicesSection = useMemo(() => (
-    <div className="grid grid-cols-2 gap-6">
+    <div className="grid grid-cols-2 gap-4 md:gap-6">
       {services.map((service) => (
         <ServiceItem key={service} name={service} />
       ))}
@@ -158,16 +158,16 @@ const OurWork = () => {
       <div className="absolute inset-0  opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
       
-      <div className="relative max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-12 md:mb-16">
           {/* Left Column */}
           <div className="flex flex-col justify-between h-full">
             <div>
-              <span className="inline-block text-base font-semibold text-purple-300 mb-4 tracking-wider 
+              <span className="inline-block text-base font-semibold text-purple-300 mb-2 md:mb-4 tracking-wider 
                 transform hover:translate-x-2 transition-transform cursor-default">
                 OUR PORTFOLIO
               </span>
-              <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
+              <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white md:leading-tight">
                 Creative
                 <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
                   Excellence
@@ -178,8 +178,8 @@ const OurWork = () => {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col justify-between h-full">
-            <div className="space-y-8">
+          <div className="flex flex-col justify-between h-full px-2 md:px-0">
+            <div className="space-y-6 md:space-y-8">
               <p className="text-white/90 text-lg leading-relaxed">
                 Welcome to our creative showcase, where imagination meets technical expertise. 
                 Each project in our portfolio represents a unique story, expertly crafted through 
@@ -188,7 +188,7 @@ const OurWork = () => {
               {servicesSection}
             </div>
             
-            <div className="space-y-3 mt-8">
+            <div className="space-y-3 mt-8 ">
               <ActionButton icon={Play}>Watch Our Feature Reel</ActionButton>
               <ActionButton icon={Play}>View Latest Projects</ActionButton>
             </div>
@@ -196,7 +196,7 @@ const OurWork = () => {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-4 px-2 md:px-0">
           <div className="col-span-12 md:col-span-3 space-y-4">
             <WorkCard item={workItems[0]} />
             <WorkCard item={workItems[1]} />

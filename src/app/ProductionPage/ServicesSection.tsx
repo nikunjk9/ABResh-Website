@@ -83,35 +83,34 @@ const ServicesSection = () => {
 
 
     return (
-        <section className="bg-black text-white py-32 px-4 relative">
+        <section className="bg-black text-white py-28 md:py-32 px-4 relative">
             {/* Subtle gradient overlay for depth */}
             <div className="absolute inset-0 bg-gradient-to-b from-purple-900/5 to-transparent pointer-events-none" />
             
             <div className="max-w-7xl mx-auto relative">
                 {/* Enhanced Header */}
-                <div className="text-center max-w-3xl mx-auto mb-20">
+                <div className="text-center max-w-3xl mx-auto md:mb-20">
                     <div className="relative inline-block">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative">
                             <span className="text-white relative z-10 drop-shadow-lg">
                                 Provided Services
                             </span>
-                           
                         </h2>
                     </div>
-                    <p className="text-gray-400 text-base  md:text-lg mb-8 md:mb-12 max-w-3xl mx-auto px-3 md:px-0">
+                    <p className="text-gray-400 text-base md:text-lg md:mb-12 max-w-3xl mx-auto px-3 md:px-0">
                         Elevate your content with our professional production services. 
                         We bring creativity, technical excellence, and innovation to every project.
                     </p>
                 </div>
 
                 {/* Services with Enhanced Styling */}
-                <div className="space-y-32">
+                <div className="space-y-0 md:space-y-32 px-2 md:px-0">
                     {services.map((service) => (
                         <div
                             key={service.id}
                             className={`flex flex-col ${
                                 service.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'
-                            } items-stretch gap-16 lg:gap-24`}
+                            } items-stretch gap-8 lg:gap-24`}
                         >
                             {/* Enhanced Image Section */}
                             <div className="w-full lg:w-1/2 relative group">
@@ -131,22 +130,24 @@ const ServicesSection = () => {
 
                             {/* Enhanced Content Section */}
                             <div className="w-full lg:w-1/2 flex flex-col">
-                                <div className="bg-gradient-to-br from-purple-900/10 to-black/50 backdrop-blur-sm rounded-xl p-8 border border-purple-500/20 h-full flex flex-col space-y-8 hover:border-purple-500/40 transition-all duration-500 shadow-lg">
+                                <div className="bg-gradient-to-br from-purple-900/10 to-black/50 backdrop-blur-sm rounded-xl p-7 md:p-8 border border-purple-500/20 h-full flex flex-col space-y-6 md:space-y-8 hover:border-purple-500/40 transition-all duration-500 shadow-lg">
                                     {/* White title with subtle gradient */}
                                     <h3 className="text-3xl lg:text-4xl font-bold">
                                         <span className="bg-gradient-to-r from-white to-gray-100 bg-clip-text text-transparent drop-shadow-lg">
                                             {service.title}
                                         </span>
                                     </h3>
-                                    <p className="text-gray-300 text-lg leading-relaxed">
+                                    <p className="text-gray-300 text-base md:text-lg leading-relaxed">
                                         {service.description}
                                     </p>
                                     
                                     {/* Enhanced Services Card */}
                                     <div className="flex-grow">
                                         <div className="bg-purple-950/40 rounded-xl p-6 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 shadow-lg">
-                                            <h4 className="text-xl text-white mb-4 font-semibold">Services Include:</h4>
-                                            <ul className="text-gray-300 space-y-3">
+                                            <h4 className="text-xl text-white mb-4 font-semibold">
+                                                Services Include:
+                                            </h4>
+                                            <ul className="text-gray-300 space-y-3 text-sm md:text-base">
                                                 {service.additionalInfo.map((info, index) => (
                                                     <li key={index} className="flex items-center group">
                                                         <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-purple-500/20 group-hover:bg-purple-500/30 transition-all duration-300 mr-3 ring-1 ring-purple-500/20 group-hover:ring-purple-500/40">

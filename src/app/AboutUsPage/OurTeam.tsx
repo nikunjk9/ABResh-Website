@@ -51,7 +51,7 @@ const OurTeam = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-14"
         >
           <motion.h2
             className="text-3xl md:text-4xl lg:text-6xl mb-6 font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
@@ -63,7 +63,7 @@ const OurTeam = () => {
             Our Team
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-lg text-gray-400 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -87,7 +87,7 @@ const OurTeam = () => {
               <div className="relative p-1 rounded-2xl bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm">
                 <div className="bg-gray-900/80 rounded-xl overflow-hidden">
                   {/* Image Container */}
-                  <div className="relative h-72 overflow-hidden">
+                  <div className="relative h-96 overflow-hidden">
                     <Image
                       src={member.img}
                       alt={member.name}

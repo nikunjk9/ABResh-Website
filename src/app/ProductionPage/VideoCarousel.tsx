@@ -101,8 +101,8 @@ export default function VideoCarousel() {
     };
 
     return (
-        <section className="bg-black text-white py-20 px-10">
-            <div className="max-w-[1800px] mx-auto px-8">
+        <section className="bg-black text-white py-16 md:py-20 px-4 md:px-10">
+            <div className="max-w-[1800px] mx-auto px-2 md:px-8">
                 <div className="flex flex-col lg:flex-row gap-12">
                     {/* Left Side - Project Information */}
                     <div className="lg:w-1/3">
@@ -190,7 +190,7 @@ export default function VideoCarousel() {
                     </div>
 
                     {/* Right Side - Video Player and Thumbnails */}
-                    <div className="lg:w-2/3 space-y-6">
+                    <div className="lg:w-2/3 space-y-6 mt-64 md:mt-0">
                         {/* Main Video Player */}
                         <div className="relative group h-[540px] bg-purple-900/20 rounded-xl overflow-hidden">
                             <video

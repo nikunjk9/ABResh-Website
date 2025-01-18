@@ -77,7 +77,7 @@ export const Gallery: React.FC = () => {
             Our Gallery
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-700 group-hover:w-full" />
           </h2>
-          <p className="max-w-xl mx-auto text-gray-400 text-base sm:text-xl px-4">
+          <p className="max-w-xl mx-auto text-gray-400 text-base sm:text-lg px-4">
             Explore the memorable moments from our events, and experience the magic.
           </p>
         </div>

@@ -41,7 +41,7 @@ const OurWork: React.FC = () => {
             Our Work
           </h2>
           <div className="max-w-xl mx-auto">
-            <p className="text-center mt-4 text-base md:text-xl px-2 text-gray-400">
+            <p className="text-center mt-4 text-base md:text-lg px-2 text-gray-400">
               We transform moments into memories and events into unforgettable experiences, bringing your vision to life.
             </p>
           </div>

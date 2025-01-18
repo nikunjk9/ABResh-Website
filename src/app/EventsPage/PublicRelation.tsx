@@ -79,7 +79,7 @@ export const PublicRelation = () => {
                     Public Relations
                 </h2>
                 <div className="max-w-2xl mx-auto">
-                    <p className="text-center mt-5 text-base md:text-xl px-2 text-gray-400">
+                    <p className="text-center mt-5 text-base md:text-lg px-2 text-gray-400">
                     Public relations (PR) is the art of managing communication between an organization and its audience. 
                     It involves creating and maintaining a positive image. 
                     </p>

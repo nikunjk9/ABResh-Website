@@ -141,8 +141,8 @@ export const TopEvents: React.FC = () => {
           <h2 className='text-4xl md:text-6xl font-bold text-white mb-4'>
             Top Events
           </h2>
-          <p className='max-w-xl mx-auto text-gray-400 text-base sm:text-xl px-4'>
-            Discover and explore about our most prestigious and impactful events ever held.
+          <p className='max-w-xl mx-auto text-gray-400 text-base sm:text-lg px-4'>
+            Discover and explore about our most prestigious and impactful events ever held. Experience the never ending carnival.
           </p>
         </div>
 

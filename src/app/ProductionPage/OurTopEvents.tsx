@@ -113,9 +113,9 @@ export default function PreviousConcerts() {
         <section className="bg-black text-white py-11 mt-12 relative overflow-hidden">
             <div className="absolute inset-0 bg--black" />
             
-            <div className="px-24 mx-auto relative">
+            <div className="px-4 md:px-24 mx-auto relative">
                 {/* Header */}
-                <div className="text-center mb-14">
+                <div className="text-center mb-8 md:mb-14">
                     <div className="flex items-center justify-center gap-2 text-purple-400 mb-4">
                         <Music2 className="w-5 h-5" />
                         <span className="text-sm font-medium tracking-wider uppercase">Production Portfolio</span>
@@ -125,16 +125,16 @@ export default function PreviousConcerts() {
                             Previous Productions
                         </span>
                     </h2>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto">
                         Explore our collection of successfully executed live events across major cities, We bring creativity, technical excellence, and innovation to every project.
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-8 items-start">
+                <div className="grid lg:grid-cols-3 gap-8 items-start px-2 md:px-0">
                     {/* Left side - Scrollable City List */}
-                    <div className="lg:col-span-1 bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-purple-500/20 h-[600px]">
+                    <div className="lg:col-span-1 bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-purple-500/20 h-[300px] md:h-[600px]">
                         <h3 className="text-xl font-semibold mb-6">Select Location</h3>
-                        <div className="h-[500px] overflow-y-auto pr-4 space-y-4 customScrollbar ">
+                        <div className="h-[200px] md:h-[500px] overflow-y-auto pr-4 space-y-4 customScrollbar ">
                             {cities.map((city) => (
                                 <button
                                     key={city.name}

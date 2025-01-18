@@ -85,7 +85,7 @@ export default function MusicEventsSlider() {
                     Our Events
                 </h2>
                 <div className="max-w-xl mx-auto">
-                    <p className="text-center text-base sm:text-lg md:text-xl text-white/70 mb-10">
+                    <p className="text-center text-base sm:text-lg md:text-lg text-white/70 mb-10">
                         Explore the incredible events hosted by ABResh Events over the years. Relive the moments, passion, and creativity.
                     </p>
                 </div>

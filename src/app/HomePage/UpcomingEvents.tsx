@@ -113,7 +113,7 @@ const UpcomingEvents = () => {
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight">
           Upcoming Events
         </h2>
-        <p className="max-w-xl mx-auto text-gray-400 text-base sm:text-xl px-8">
+        <p className="max-w-xl mx-auto text-gray-400 text-base sm:text-lg px-8">
           Moments that inspire, connections that last—join us for an event to remember!
         </p>
       </div>
