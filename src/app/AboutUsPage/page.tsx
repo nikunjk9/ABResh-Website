@@ -17,15 +17,14 @@ import HistorySection from './HistorySection';
 
 const AboutUsPage = () => {
 
-  useEffect(() => {
-    // Get the hero section element
-    const heroSection = document.getElementById('hero-section');
-    
-    // Scroll to hero section when component mounts
-    if (heroSection) {
-        heroSection.scrollIntoView({ behavior: 'instant' });
-    }
-}, []); // Empty dependency array means this runs once when component mounts
+    useEffect(() => {
+        const heroSection = document.getElementById('hero-section');
+  
+        if (heroSection) {
+          heroSection.scrollIntoView({ behavior: 'instant' });
+        }
+    }, []
+  ); 
 
 return (
     <div>

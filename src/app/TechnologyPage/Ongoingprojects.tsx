@@ -153,13 +153,13 @@ export const OngoingProject: React.FC = () => {
                 )}
             </AnimatePresence>
 
-            <section className="py-16 bg-black">
+            <section className="py-7 mt-9 bg-black">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-1">
                         <h2 className="text-4xl md:text-6xl tracking-tight font-bold text-white mb-6">
                             Ongoing Projects
                         </h2>
-                        <p className="text-gray-300 text-sm sm:text-base md:text-lg px-4 mx-auto max-w-3xl">
+                        <p className="text-gray-400 text-sm sm:text-base md:text-lg px-4 mx-auto max-w-3xl">
                             Exploring the intersection of technology and creativity through our ongoing projects. 
                             Each project represents our commitment to excellence and innovation.
                         </p>

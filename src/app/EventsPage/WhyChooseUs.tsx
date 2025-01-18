@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
             Why Choose Us
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-xl px-3">
+          <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg px-3">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
           </p>
         </div>

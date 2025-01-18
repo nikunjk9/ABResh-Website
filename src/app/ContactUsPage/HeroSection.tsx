@@ -144,8 +144,8 @@ const HeroSection = () => {
         }`}>
           <p className="py-2 md:py-4 sm:text-lg lg:max-w-3xl lg:text-xl px-3 text-gray-300 max-w-3xl mx-auto leading-relaxed">
             <Building2 className="mr-1 md:mr-2 inline-block animate-pulse text-purple-400" size={20} />
-            Ready to bring your event to life? Our team is here to turn your vision into reality.
-            Connect with us and let&apos;s create something extraordinary together.
+              Ready to bring your event to life? Our team is here to turn your vision into reality.
+              Connect with us and let&apos;s create something extraordinary together.
             <ContactIcon className=" ml-1 md:ml-2 inline-block animate-pulse text-purple-400" size={20} />
           </p>
         </div>

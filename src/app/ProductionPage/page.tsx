@@ -1,5 +1,6 @@
+'use client';
+
 import React from 'react'
-import { Banner } from '../HomePage/Banner'
 import { Navbar } from '../HomePage/Navbar'
 import HeroSection from './HeroSection'
 import ContactUs from '../HomePage/ContactUs'
@@ -11,24 +12,37 @@ import OurWork from './OurWork'
 import ServicesSection from './ServicesSection'
 import ScrollToTop from '@/Components/ScrollToTop'
 import FAQSection from '../HomePage/FAQs'
+import NewsletterSignup from '../HomePage/NewsletterSignUp'
+import { useEffect } from "react";
 
-const ProductionPage = () => {
+export default function ProductionPage() {
+  useEffect(() => {
+      const heroSection = document.getElementById('hero-section');
+
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'instant' });
+      }
+  }, []
+); 
+
   return (
-    <>
-    <Banner/>
-    <Navbar/>
-    <HeroSection/>
-    <WhyChooseUs/>
-    <OurWork/>
-    <ServicesSection/>
-    <VideoCarousel/>
-    <OurTopEvents/>
-    <FAQSection/>
-    <ContactUs/>
-    <Footer/>
-    <ScrollToTop/>
-    </>
+    <div>
+      <Navbar />
+      <div id="hero-section">
+          <HeroSection />
+      </div>
+      <WhyChooseUs/>
+      <OurWork/>
+      <ServicesSection/>
+      <VideoCarousel/>
+      <OurTopEvents/>
+      <FAQSection/>
+      <ContactUs/>
+      <NewsletterSignup/>
+      <Footer/>
+      <ScrollToTop/>
+    </div>
   )
-}
+};
 
-export default ProductionPage
+

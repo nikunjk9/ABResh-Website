@@ -1,234 +1,217 @@
-import React from 'react';
-import Image, {StaticImageData} from 'next/image';
-import pow1 from '@/assets/images/POW1.png';
-import pow2 from '@/assets/images/POW2.png';
-import pow3 from '@/assets/images/POW3.png';
-import pow4 from '@/assets/images/POW4.png';
-import pow5 from '@/assets/images/POW5.png';
+import React, { useState, useMemo } from 'react';
+import { Film, Play } from 'lucide-react';
+
+// Define the WorkItem interface
+interface WorkItem {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  category: string;
+}
+
+// Memoize static components
+const StatItem = React.memo(({ value, label }: { value: string; label: string }) => (
+  <div className="text-center md:text-left">
+    <p className="text-3xl md:text-4xl font-bold text-white mb-1">{value}</p>
+    <p className="text-purple-200 text-sm">{label}</p>
+  </div>
+));
+
+const ServiceItem = React.memo(({ name }: { name: string }) => (
+  <div className="flex items-center gap-2 text-purple-200 hover:text-white transition-colors duration-300 group">
+    <Film className="w-4 h-4 group-hover:scale-110 transition-transform" />
+    <span className="text-sm font-medium">{name}</span>
+  </div>
+));
+
+const ActionButton = React.memo(({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) => (
+  <button className="group inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 
+    text-white rounded-lg transition-all duration-300 w-full hover:scale-[1.02] active:scale-[0.98]">
+    <Icon className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+    <span className="font-medium">{children}</span>
+  </button>
+));
+
+const WorkCard = React.memo(({ 
+  item, 
+  size = 'small' 
+}: { 
+  item: WorkItem; 
+  size?: 'small' | 'large' 
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  const sizeClasses = useMemo(() => 
+    size === 'large' ? 'p-8 text-2xl' : 'p-6 text-xl',
+    [size]
+  );
+  
+  return (
+    <div
+      className="group relative overflow-hidden rounded-2xl aspect-square hover:shadow-xl transition-all duration-500 ease-in-out cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <img
+        src={item.image}
+        alt={item.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      />
+      
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent 
+        opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out" />
+      
+      <div className={`
+        absolute inset-x-0 bottom-0 ${sizeClasses}
+        flex flex-col transform translate-y-full group-hover:translate-y-0
+        transition-transform duration-500 ease-out
+      `}>
+        <span className="inline-block text-purple-300 text-sm font-medium mb-2 
+          transform translate-y-8 group-hover:translate-y-0 transition-all duration-500
+          opacity-0 group-hover:opacity-100">
+          {item.category}
+        </span>
+        
+        <h3 className="text-white font-bold mb-2
+          transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 delay-75
+          opacity-0 group-hover:opacity-100">
+          {item.title}
+        </h3>
+        
+        <p className={`text-white/90 ${size === 'large' ? 'text-lg' : 'text-sm'}
+          transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 delay-100
+          opacity-0 group-hover:opacity-100`}>
+          {item.description}
+        </p>
+      </div>
+    </div>
+  );
+});
+
+// Memoize static data
+const workItems = [
+  {
+    id: 1,
+    image: '/images/Production1.jpg',
+    title: "Cinematic Production",
+    description: "Creating compelling visual narratives through state-of-the-art digital cinematography",
+    category: "Production"
+  },
+  {
+    id: 2,
+    image: '/images/Production2.jpg',
+    title: "Creative Direction",
+    description: "Guiding creative vision from concept to final delivery with artistic excellence",
+    category: "Direction"
+  },
+  {
+    id: 3,
+    image: '/images/Production4.jpg',
+    title: "Advanced Post-Production",
+    description: "Transforming raw footage into captivating stories with cutting-edge editing techniques",
+    category: "Editing"
+  },
+  {
+    id: 4,
+    image: '/images/Production3.jpg',
+    title: "Immersive Sound Design",
+    description: "Crafting rich audio landscapes that elevate visual storytelling",
+    category: "Audio"
+  },
+  {
+    id: 5,
+    image: '/images/Production5.jpg',
+    title: "Dynamic Visual Effects",
+    description: "Pushing creative boundaries with innovative visual effects and motion design",
+    category: "VFX"
+  }
+] as const;
+
+const services = ['Film Production', 'Creative Direction', 'Post-Production', 'Sound Engineering'] as const;
+const stats = [
+  { value: '150+', label: 'Projects Delivered' },
+  { value: '98%', label: 'Client Satisfaction' },
+  { value: '15+', label: 'Countries Served' }
+] as const;
 
 const OurWork = () => {
-    return (
-        <section className="bg-[#A044FF] text-white py-16">
-            <div className="max-w-7xl mx-auto px-4">
-                {/* Title and Description */}
-                <div className="flex flex-col lg:flex-row items-start gap-12 justify-between mb-12">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white whitespace-nowrap">
-                        Our Work
-                    </h2>
-                    <p className="text-white text-lg lg:max-w-4xl">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
-                        standard dummy text ever since the 1500s, when an unknown printer took Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
-                    </p>
-                </div>
+  // Memoize the stats and services sections
+  const statsSection = useMemo(() => (
+    <div className="grid grid-cols-3 gap-8 mt-12">
+      {stats.map((stat) => (
+        <StatItem key={stat.label} {...stat} />
+      ))}
+    </div>
+  ), []);
 
-                {/* Image Grid */}
-                <div className="grid grid-cols-12 gap-4">
-                    {/* Left Column */}
-                    <div className="col-span-12 md:col-span-3 lg:col-span-3 space-y-4">
-                        <div className="overflow-hidden relative aspect-[4/3] md:h-[130px] lg:h-auto">
-                            <Image
-                                src={pow1}
-                                alt="Tablet interface showing digital analytics"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="overflow-hidden relative aspect-[4/3] md:h-[130px] lg:h-auto">
-                            <Image
-                                src={pow2}
-                                alt="Camera display showing video recording"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                    </div>
+  const servicesSection = useMemo(() => (
+    <div className="grid grid-cols-2 gap-6">
+      {services.map((service) => (
+        <ServiceItem key={service} name={service} />
+      ))}
+    </div>
+  ), []);
 
-                    {/* Center Column */}
-                    <div className="col-span-12 md:col-span-6 lg:col-span-6">
-                        <div className="overflow-hidden relative aspect-[4/3] md:h-[275px] lg:h-auto">
-                            <Image
-                                src={pow3}
-                                alt="Video editor working with multiple screens"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Right Column */}
-                    <div className="col-span-12 md:col-span-3 lg:col-span-3 space-y-4">
-                        <div className="overflow-hidden relative aspect-[4/3] md:h-[130px] lg:h-auto">
-                            <Image
-                                src={pow4}
-                                alt="Video editing software interface"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="overflow-hidden relative aspect-[4/3] md:h-[130px] lg:h-auto">
-                            <Image
-                                src={pow5}
-                                alt="Person working at computer desk"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                    </div>
-                </div>
+  return (
+    <section className="relative bg-purple-950 py-32 overflow-hidden">
+      <div className="absolute inset-0  opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+      
+      <div className="relative max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+          {/* Left Column */}
+          <div className="flex flex-col justify-between h-full">
+            <div>
+              <span className="inline-block text-base font-semibold text-purple-300 mb-4 tracking-wider 
+                transform hover:translate-x-2 transition-transform cursor-default">
+                OUR PORTFOLIO
+              </span>
+              <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
+                Creative
+                <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+                  Excellence
+                </span>
+              </h2>
             </div>
-        </section>
-    );
+            {statsSection}
+          </div>
+
+          {/* Right Column */}
+          <div className="flex flex-col justify-between h-full">
+            <div className="space-y-8">
+              <p className="text-white/90 text-lg leading-relaxed">
+                Welcome to our creative showcase, where imagination meets technical expertise. 
+                Each project in our portfolio represents a unique story, expertly crafted through 
+                our commitment to pushing creative boundaries and delivering exceptional results.
+              </p>
+              {servicesSection}
+            </div>
+            
+            <div className="space-y-3 mt-8">
+              <ActionButton icon={Play}>Watch Our Feature Reel</ActionButton>
+              <ActionButton icon={Play}>View Latest Projects</ActionButton>
+            </div>
+          </div>
+        </div>
+
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-12 md:col-span-3 space-y-4">
+            <WorkCard item={workItems[0]} />
+            <WorkCard item={workItems[1]} />
+          </div>
+          <div className="col-span-12 md:col-span-6">
+            <WorkCard item={workItems[2]} size="large" />
+          </div>
+          <div className="col-span-12 md:col-span-3 space-y-4">
+            <WorkCard item={workItems[3]} />
+            <WorkCard item={workItems[4]} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default OurWork;
-
-// import React from 'react';
-// import Image, {StaticImageData} from 'next/image';
-// import pow1 from '@/assets/images/POW1.png';
-// import pow2 from '@/assets/images/POW2.png';
-// import pow3 from '@/assets/images/POW3.png';
-// import pow4 from '@/assets/images/POW4.png';
-// import pow5 from '@/assets/images/POW5.png';
-
-
-// const OurWork = () => {
-//     return (
-//         <section className="bg-[#A044FF] text-white py-16">
-//             <div className="max-w-7xl mx-auto px-4">
-//                 {/* Title and Description */}
-//                 <div className="flex flex-col lg:flex-row items-start gap-12 justify-between mb-12">
-//                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white whitespace-nowrap">
-//                         Our Work
-//                     </h2>
-//                     <p className="text-white text-lg lg:max-w-4xl">
-//                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-//                         standard dummy text ever since the 1500s, when an unknown printer took Lorem Ipsum is simply dummy text of the
-//                         printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-//                     </p>
-//                 </div>
-
-//                 {/* Image Grid */}
-//                 <div className="grid grid-cols-12 gap-4">
-//                     {/* Left Column */}
-//                     <div className="col-span-12 lg:col-span-3 space-y-4">
-//                         <div className=" overflow-hidden relative aspect-[4/3]">
-//                             <Image
-//                                 src={pow1}
-//                                 alt="Tablet interface showing digital analytics"
-//                                 fill
-//                                 className="object-cover"
-//                             />
-//                         </div>
-//                         <div className=" overflow-hidden relative aspect-[4/3]">
-//                             <Image
-//                                 src={pow2}
-//                                 alt="Camera display showing video recording"
-//                                 fill
-//                                 className="object-cover"
-//                             />
-//                         </div>
-//                     </div>
-
-//                     {/* Center Column */}
-//                     <div className="col-span-12 lg:col-span-6">
-//                         <div className=" overflow-hidden relative aspect-[4/3]">
-//                             <Image
-//                                 src={pow3}
-//                                 alt="Video editor working with multiple screens"
-//                                 fill
-//                                 className="object-cover"
-//                             />
-//                         </div>
-//                     </div>
-
-//                     {/* Right Column */}
-//                     <div className="col-span-12 lg:col-span-3 space-y-4">
-//                         <div className=" overflow-hidden relative aspect-[4/3]">
-//                             <Image
-//                                 src={pow4}
-//                                 alt="Video editing software interface"
-//                                 fill
-//                                 className="object-cover"
-//                             />
-//                         </div>
-//                         <div className=" overflow-hidden relative aspect-[4/3]">
-//                             <Image
-//                                 src={pow5}
-//                                 alt="Person working at computer desk"
-//                                 fill
-//                                 className="object-cover"
-//                             />
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// };
-
-// export default OurWork;
-
-// import React from 'react';
-
-// const OurWork = () => {
-//     return (
-//         <section className="bg-[#A044FF] text-white py-12">
-//             <div className="max-w-7xl mx-auto">
-//                 {/* Title and Description */}
-//                 <div className="flex flex-col lg:flex-row items-center gap-12 justify-between mb-12">
-//                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white ">
-//                         Our Work
-//                     </h2>
-//                     <p className="text-White text-xl">
-//                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-//                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-//                         when an unknown printer took Lorem Ipsum is simply dummy text of the printing
-//                         and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.
-//                     </p>
-//                 </div>
-
-//                 {/* Image Collage */}
-//                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-//                     <div className="row-span-2">
-//                         <img
-//                             src="https://via.placeholder.com/300x400"
-//                             alt="Work 1"
-//                             className="w-full h-full object-cover rounded-lg"
-//                         />
-//                     </div>
-//                     <div>
-//                         <img
-//                             src="https://via.placeholder.com/300x200"
-//                             alt="Work 2"
-//                             className="w-full h-full object-cover rounded-lg"
-//                         />
-//                     </div>
-//                     <div>
-//                         <img
-//                             src="https://via.placeholder.com/300x200"
-//                             alt="Work 3"
-//                             className="w-full h-full object-cover rounded-lg"
-//                         />
-//                     </div>
-//                     <div>
-//                         <img
-//                             src="https://via.placeholder.com/300x200"
-//                             alt="Work 4"
-//                             className="w-full h-full object-cover rounded-lg"
-//                         />
-//                     </div>
-//                     <div>
-//                         <img
-//                             src="https://via.placeholder.com/300x200"
-//                             alt="Work 5"
-//                             className="w-full h-full object-cover rounded-lg"
-//                         />
-//                     </div>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// };
-
-// export default OurWork;
