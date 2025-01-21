@@ -29,8 +29,6 @@ const FloatingElement: React.FC<{
   const [rotation, setRotation] = useState(element.rotation);
   const Icon = ICONS[element.icon];
 
-  
-
   return (
     <div
       className="absolute transition-opacity duration-300 hover:opacity-100"
@@ -48,29 +46,70 @@ const MusicServicesHero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [elements, setElements] = useState<FloatingElement[]>([]);
+  const parallaxRef = useRef<HTMLDivElement>(null);
+  const lastMousePos = useRef({ x: 0, y: 0 });
+  const frameRef = useRef<number>();
   const containerRef = useRef<HTMLDivElement>(null);
   const nextSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
     setIsLoaded(true);
-    if (!containerRef.current) return;
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      const newX = (e.clientX / window.innerWidth) * 15;
+      const newY = (e.clientY / window.innerHeight) * 15;
+      
+      lastMousePos.current = { x: newX, y: newY };
+    };
 
-    const containerHeight = containerRef.current.clientHeight;
-    const containerWidth = containerRef.current.clientWidth;
+    const animate = () => {
+      if (parallaxRef.current) {
+        const currentX = parseFloat(parallaxRef.current.dataset.x || '0');
+        const currentY = parseFloat(parallaxRef.current.dataset.y || '0');
+        
+        // Smooth interpolation
+        const newX = currentX + (lastMousePos.current.x - currentX) * 0.1;
+        const newY = currentY + (lastMousePos.current.y - currentY) * 0.1;
+        
+        parallaxRef.current.dataset.x = newX.toString();
+        parallaxRef.current.dataset.y = newY.toString();
+        
+        parallaxRef.current.style.transform = 
+          `scale(1.1) translate(${newX}px, ${newY}px)`;
+      }
+      
+      frameRef.current = requestAnimationFrame(animate);
+    };
 
-    const musicIcons: FloatingElement['icon'][] = ['music', 'headphones', 'mic', 'musicNote'];
-    const newElements: FloatingElement[] = Array.from({ length: 20 }, (_, i) => ({
-      id: i,
-      x: Math.random() * containerWidth,
-      y: Math.random() * containerHeight,
-      scale: Math.random() * 0.5 + 0.5,
-      rotation: Math.random() * 360,
-      speed: Math.random() * 1 + 0.5,
-      icon: musicIcons[Math.floor(Math.random() * musicIcons.length)]
-    }));
+    window.addEventListener('mousemove', handleMouseMove);
+    frameRef.current = requestAnimationFrame(animate);
 
-    setElements(newElements);
+    // Initialize floating elements if needed
+    if (containerRef.current) {
+      const containerHeight = containerRef.current.clientHeight;
+      const containerWidth = containerRef.current.clientWidth;
+
+      const musicIcons: FloatingElement['icon'][] = ['music', 'headphones', 'mic', 'musicNote'];
+      const newElements: FloatingElement[] = Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        x: Math.random() * containerWidth,
+        y: Math.random() * containerHeight,
+        scale: Math.random() * 0.5 + 0.5,
+        rotation: Math.random() * 360,
+        speed: Math.random() * 1 + 0.5,
+        icon: musicIcons[Math.floor(Math.random() * musicIcons.length)]
+      }));
+
+      setElements(newElements);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
+      }
+    };
   }, []);
 
   const handleScrollClick = () => {
@@ -83,9 +122,14 @@ const MusicServicesHero: React.FC = () => {
       className="relative h-screen w-full overflow-hidden bg-black"
     >
       {/* Background Image with Parallax */}
-      <div className="absolute inset-0">
+      <div
+        ref={parallaxRef}
+        className="absolute inset-0"
+        data-x="0"
+        data-y="0"
+      >
         <Image
-          src="/images/music4.jpg" // Make sure to add your image path here
+          src="/images/music4.jpg"
           alt="Music Studio Background"
           layout="fill"
           objectFit="cover"
@@ -101,7 +145,6 @@ const MusicServicesHero: React.FC = () => {
       {/* Main Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-4">
         <div className="text-center text-white">
-          {/* Title Section */}
           <div className={`transform transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}>
@@ -112,7 +155,6 @@ const MusicServicesHero: React.FC = () => {
             </h1>
           </div>
 
-          {/* Main Heading with Gradient Animation */}
           <div className={`mt-6 transform transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
@@ -121,7 +163,6 @@ const MusicServicesHero: React.FC = () => {
             </h2>
           </div>
 
-          {/* Description */}
           <div className={`transform transition-all duration-1000 delay-500 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}>
@@ -130,7 +171,6 @@ const MusicServicesHero: React.FC = () => {
             </p>
           </div>
 
-          {/* CTA Buttons */}
           <div className={`mt-10 flex justify-center gap-4 transform transition-all duration-1000 delay-700 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}>

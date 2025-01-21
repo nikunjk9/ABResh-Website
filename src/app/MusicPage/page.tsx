@@ -4,9 +4,9 @@ import React, { useEffect } from 'react'
 import { Banner } from '../HomePage/Banner'
 import { Navbar } from '../HomePage/Navbar'
 import HeroSection from './HeroSection'
-import  MusicPlayer from './Scroller'
-import WhyMusicServices from './WhyMusicServices'
-import WhyMusicServicesSecond from './WhyMusicServicesSecond'
+import  MusicPlayer from './MusicPlayer'
+import WhyMusicServices from './Collaborations'
+import WhyMusicServicesSecond from './WhyMusicServices'
 import RestartSection from './RestartSection'
 import ContactUs from '../HomePage/ContactUs'
 import Footer from '../HomePage/Footer'
@@ -16,6 +16,9 @@ import OurServices from './OurServices'
 import ScrollToTop from '@/Components/ScrollToTop'
 import FAQSection from '../HomePage/FAQs'
 import PreviousProd from '../ProductionPage/PreviousProd'
+import Collaboration from './Collaborations';
+import FeaturedArtists from './FeaturedArtists';
+import NewsletterSignup from '../HomePage/NewsletterSignUp';
 
 const MusicPage = () => {
   useEffect(() => {
@@ -35,7 +38,8 @@ return (
     </div>
         <MusicPlayer/>
         <PortfolioSection/>
-        <WhyMusicServices/>
+        <Collaboration/>
+        <FeaturedArtists/>
         <WhyMusicServicesSecond/>
         <OurServices/>
         <RestartSection/>
@@ -43,8 +47,8 @@ return (
         <PreviousProd/>
         <FAQSection/>
         <ContactUs/>
+        <NewsletterSignup/>
         <Footer/>
-        <ScrollToTop/>
     </div>
   )
 }
