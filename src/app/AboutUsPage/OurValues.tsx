@@ -1,11 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { DotLottiePlayer } from "@dotlottie/react-player";
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, ChevronRight } from 'lucide-react';
 
 const OurValues = () => {
   const sectionRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const values = [
@@ -30,10 +31,10 @@ const OurValues = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative bg-gradient-to-b from-black via-gray-900 to-black text-white py-24 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-gradient-to-b from-black via-gray-900 to-black text-white py-12 mt-12 overflow-hidden px-3 md:px-0">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute w-full h-full bg-[url('/api/placeholder/20/20')] bg-repeat opacity-5" />
+        <div className="absolute w-full h-full opacity-5" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
       </div>
 
@@ -42,7 +43,7 @@ const OurValues = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="flex flex-col lg:flex-row lg:items-start gap-12 mb-24"
+          className="flex flex-col lg:flex-row lg:items-start gap-6 md:gap-12 mb-8 md:mb-16"
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -51,7 +52,7 @@ const OurValues = () => {
             className="lg:w-1/2 space-y-6"
           >
             <div className="relative inline-block">
-              <h2 className="block mt-2 text-3xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+              <h2 className="block mt-2 text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
                 Our Core <br/> Values
               </h2>
             </div>
@@ -60,7 +61,7 @@ const OurValues = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.3 }}
-            className="lg:w-1/2 text-xl text-gray-400 leading-relaxed"
+            className="lg:w-1/2 text-lg text-gray-400 leading-relaxed md:mt-6 text-left border-l border-zinc-800 pl-6"
           >
             At the heart of our organization lies a set of core values that drive everything we do. These principles shape our approach to innovation, guide our relationships, and define our commitment to excellence in the digital realm.
           </motion.p>
@@ -68,7 +69,7 @@ const OurValues = () => {
         </motion.div>
 
         {/* Values Grid */}
-        <div className="grid lg:grid-cols-3 gap-12 mb-20">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-12 mb-14 md:mb-20">
           {values.map((value, index) => (
             <motion.div
               key={index}
@@ -77,8 +78,8 @@ const OurValues = () => {
               transition={{ delay: 0.2 + index * 0.1 }}
               className="group relative"
             >
-              <div className="relative p-1 rounded-2xl bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm">
-                <div className="bg-gray-900/80 p-8 rounded-xl space-y-6">
+              <div className="relative p-1 rounded-2xl bg-white/5  backdrop-blur-sm border border-purple-500/10">
+                <div className=" p-6 md:p-8 rounded-xl space-y-6 rounded-2x">
                   <div className="h-32 relative flex items-center justify-center">
                     <DotLottiePlayer
                       src={value.icon}
@@ -107,7 +108,7 @@ const OurValues = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="pb-20 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+          <h2 className="bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Ready to Make a Difference?
           </h2>
           <motion.button
@@ -115,8 +116,32 @@ const OurValues = () => {
             whileTap={{ scale: 0.95 }}
             className="relative group px-8 py-4 rounded-full overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-400 transition-transform duration-500 group-hover:scale-110" />
-            <span className="relative z-10 text-lg font-medium">Join Our Team</span>
+
+            {/* CTA Button */}
+                        <div 
+                          className="relative group"
+                          onMouseEnter={() => setIsHovered(true)}
+                          onMouseLeave={() => setIsHovered(false)}
+                        >
+                          <div className={`
+                            absolute inset-0 
+                            rounded-xl blur-xl transition-opacity duration-500
+                            ${isHovered ? 'opacity-100' : 'opacity-0'}
+                          `} />
+                          
+                          <div className={`
+                            relative flex items-center gap-3 px-5 md:px-8 py-4 rounded-xl
+                            text-base md:text-lg font-medium transition-all duration-300
+                            ${isHovered 
+                              ? 'bg-gradient-to-r from-gray-500 to-white text-black transform -translate-y-1' 
+                              : 'bg-gradient-to-r from-white to-gray-500 text-black shadow-lg'}
+                          `}>
+                            Start Your Project
+                            <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${
+                              isHovered ? 'rotate-45' : ''
+                            }`} />
+                          </div>
+                        </div>
           </motion.button>
           
         </motion.div>
@@ -126,7 +151,7 @@ const OurValues = () => {
             transition={{ delay: 1, duration: 1.5 }}
             className="absolute bottom-9 animate-bounce items-center text-center right-[622px]"
           >
-            <ChevronDown className="w-8 h-8 text-purple-500 items-center text-center" />
+            <ChevronDown className="w-8 h-8 text-white/50 items-center text-center" />
           </motion.div>
       </div>
     </section>

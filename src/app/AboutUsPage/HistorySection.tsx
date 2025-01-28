@@ -42,7 +42,7 @@ const HistorySection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className={`relative bg-gradient-to-b ${colors.background} text-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden`}
+      className={`relative bg-gradient-to-b ${colors.background} text-white py-16 md:py-24 px-6 sm:px-6 lg:px-8 overflow-hidden`}
     >
       {/* Subtle Background Effects */}
       <div className="absolute inset-0 opacity-10">
@@ -87,7 +87,7 @@ const HistorySection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-3"
             >
-              <h2 className="relative inline-block text-3xl md:text-4xl lg:text-5xl font-bold">
+              <h2 className="relative inline-block text-4xl md:text-5xl font-bold">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
                   Our History
                 </span>

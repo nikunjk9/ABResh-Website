@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin,  } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronRight } from 'lucide-react';
 import backgroundImage from "@/assets/images/background.png";
 
 import person1 from "@/assets/images/person/person1.jpg";
@@ -17,19 +17,22 @@ import person7 from "@/assets/images/person/person7.jpg";
 import person8 from "@/assets/images/person/person8.jpg";
 
 const teamMembers = [
-  { name: 'Daljit Singh', img: person1, role: 'Founder & CEO' },
-  { name: 'Shilpa Roy', img: person2, role: 'Creative Director' },
-  { name: 'Sihan Singh', img: person3, role: 'Technical Lead' },
-  { name: 'Daljeet Kaur', img: person4, role: 'Project Manager' },
-  { name: 'Sharmila Roy', img: person5, role: 'Design Lead' },
-  { name: 'Jitendar Singh', img: person6, role: 'Senior Developer' },
-  { name: 'Ganpat Sharma', img: person7, role: 'UX Designer' },
-  { name: 'Sukanya Singhaniya', img: person8, role: 'Content Strategist' },
+  { name: 'Aftab Sagar', img: person1, role: 'Founder & CEO of ABResh' },
+  { name: 'Kushal Saxsen', img: person2, role: 'Mern Stack Developer' },
+  { name: 'Nikunj Kumar', img: person3, role: 'Mern Stack Developer' },
+  { name: 'Vidhit Saxsena', img: person4, role: 'Mern Stack Developer' },
+  { name: 'Pratibha', img: person5, role: 'UI/UX Design' },
+  { name: 'Somar', img: person6, role: 'App Devloper' },
+  { name: 'Smriti', img: person7, role: 'UI/UX Designer' },
+  { name: 'Sukanya ', img: person8, role: 'Content Strategist' },
 ];
 
 const OurTeam = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+
   return (
-    <section className="relative bg-gradient-to-b from-black via-gray-900 to-black py-8 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-black via-gray-900 to-black md:py-4 overflow-hidden">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div
@@ -51,10 +54,10 @@ const OurTeam = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-8 md:mb-12"
         >
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-6xl mb-6 font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-4xl lg:text-6xl mb-5 md:mb-6 font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -63,7 +66,7 @@ const OurTeam = () => {
             Our Team
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-400 max-w-3xl mx-auto"
+            className="text-base md:text-lg text-gray-400 max-w-3xl mx-auto px-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -74,7 +77,7 @@ const OurTeam = () => {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-6 lg:gap-4">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
@@ -85,9 +88,9 @@ const OurTeam = () => {
               className="group relative"
             >
               <div className="relative p-1 rounded-2xl bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm">
-                <div className="bg-gray-900/80 rounded-xl overflow-hidden">
+                <div className="bg-gray-900/80 rounded-xl overflow-hidden shadow-2xl">
                   {/* Image Container */}
-                  <div className="relative h-96 overflow-hidden">
+                  <div className="relative h-48 md:h-80 mb-auto overflow-hidden">
                     <Image
                       src={member.img}
                       alt={member.name}
@@ -134,16 +137,33 @@ const OurTeam = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
-          className="text-center mt-16"
+          className="text-center mt-8 md:mt-16"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group bg-gradient-to-r from-purple-600 to-purple-400 px-8 py-4 rounded-full text-lg font-medium inline-flex items-center gap-2 hover:shadow-lg hover:shadow-purple-500/25 transition-shadow duration-300"
+          {/* CTA Button */}
+          <div 
+            className="relative group inline-flex"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            Join Our Team
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
+            <div className={`
+              absolute inset-0 
+              rounded-xl blur-xl transition-opacity duration-500
+              ${isHovered ? 'opacity-100' : 'opacity-0'}
+            `} />
+                                    
+            <button className={`
+              relative flex items-center gap-3 px-3 md:px-8 py-4 rounded-xl
+              text-sm md:text-lg font-medium transition-all duration-300
+              ${isHovered 
+                ? 'bg-gradient-to-r from-gray-500 to-white text-black transform -translate-y-1' 
+                : 'bg-gradient-to-r from-white to-gray-500 text-black shadow-lg'}
+            `}>
+              Start Your Project
+              <ArrowUpRight className={`w-5 h-5 transition-transform duration-300 ${
+                isHovered ? 'rotate-45' : ''
+              }`} />
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>

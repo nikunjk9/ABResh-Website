@@ -171,7 +171,7 @@ export const OngoingProject: React.FC = () => {
 
                         <motion.div
                             animate={{
-                                x: "0"
+                                x: "30",
                             }}
                             transition={{
                                 duration: 20,

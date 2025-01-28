@@ -128,8 +128,8 @@ const HeroSection = () => {
               className="inline-block animate-pulse text-purple-400" size={16} 
             />
           </h1>
-          <h1 className="text-4xl mt-4 sm:text-6xl lg:text-7xl font-extrabold">
-            <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-7xl md:text-[120px] font-bold tracking-tighter text-center leading-none text-transparent sm:pb-4">
+          <h1 className="text-4xl mt-2 md:mt-4 sm:text-6xl lg:text-7xl font-extrabold">
+            <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-[65px] md:text-[120px] font-bold tracking-tighter text-center leading-none text-transparent sm:pb-4">
               Contact Us
 
               <span className="ml-2 sm:ml-4 inline-block animate-bounce">
@@ -139,10 +139,10 @@ const HeroSection = () => {
           </h1>
         </div>
 
-        <div className={`mt-3 md:mt-2 transform transition-all duration-700 delay-200 ${
+        <div className={`mt-1 md:mt-0 transform transition-all duration-700 delay-200 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}>
-          <p className="py-2 md:py-4 sm:text-lg lg:max-w-3xl lg:text-xl px-3 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="py-2 md:py-4 text-[15px] lg:max-w-3xl md:text-xl px-3 text-gray-300 max-w-3xl mx-auto leading-relaxed">
             <Building2 className="mr-1 md:mr-2 inline-block animate-pulse text-purple-400" size={20} />
               Ready to bring your event to life? Our team is here to turn your vision into reality.
               Connect with us and let&apos;s create something extraordinary together.
@@ -158,7 +158,7 @@ const HeroSection = () => {
         >
           <button 
             onClick={handleExploreClick}
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-700 via-purple-500 to-purple-800 px-8 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 hover:from-purple-600 hover:via-purple-400 hover:to-purple-700"
+            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-700 via-purple-500 to-purple-800 px-6 py-3 md:px-8 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 hover:from-purple-600 hover:via-purple-400 hover:to-purple-700"
           >
             <span className="relative z-10">
               Get Started
@@ -166,19 +166,19 @@ const HeroSection = () => {
             <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-purple-600/50 to-transparent transition-transform duration-300 group-hover:translate-x-0" />
           </button>
           
-          <button className="rounded-full px-8 py-3 font-semibold text-white border border-purple-500/30 hover:border-purple-500/60 hover:bg-purple-500/10 transition-all duration-300 backdrop-blur-sm hover:shadow-lg hover:shadow-purple-500/20">
+          <button className="rounded-full px-6 py-3 md:px-8 font-semibold text-white border border-purple-500/30 hover:border-purple-500/60 hover:bg-purple-500/10 transition-all duration-300 backdrop-blur-sm hover:shadow-lg hover:shadow-purple-500/20">
             Learn More
           </button>
         </div>
 
         <div className="absolute -bottom-36 md:-bottom-44 left-1/2 -translate-x-1/2 cursor-pointer group z-20">
           <div className="flex flex-col items-center gap-1 sm:gap-4">
-              <span className="text-purple-300/70 text-sm group-hover:text-purple-300 transition-colors duration-300">
+              <span className="text-purple-300/70 text-xs group-hover:text-purple-300 transition-colors duration-300">
                 Scroll to explore
               </span>
               <ChevronDown 
               onClick={handleScroll}
-              className="text-purple-400/70 animate-bounce group-hover:text-purple-400 transition-colors duration-300" size={32} />
+              className="text-purple-400/70 animate-bounce group-hover:text-purple-400 transition-colors duration-300" size={24} />
           </div>
         </div>
       </div>

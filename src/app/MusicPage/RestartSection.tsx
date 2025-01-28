@@ -105,7 +105,7 @@ const RestartSection: React.FC = () => {
             <div className="space-y-6 max-w-4xl">
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 Ready to Transform Your
-                <span className="block bg-gradient-to-r from-purple-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Musical Vision?
                 </span>
               </h2>

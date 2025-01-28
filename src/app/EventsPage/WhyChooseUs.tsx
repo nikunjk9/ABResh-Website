@@ -57,7 +57,7 @@ const WhyChooseUs = () => {
   return (
     <section className="bg-black py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(64,64,64,0.15),transparent_70%)]" />
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 lg:px-0 2xl:px-0 relative">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
             Why Choose Us
@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-3 md:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-3 md:px-20 lg:px-0 2xl:px-20">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}

@@ -48,10 +48,10 @@ const SocialMediaPresence = () => {
     ];
 
     return (
-        <section className="relative py-12 overflow-hidden bg-black mb-16 px-2 md:px-0">
+        <section className="relative py-12 overflow-hidden bg-black px-2 md:px-0">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Content Container */}
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-14 md:gap-16">
                     {/* Left Images */}
                     <motion.div 
                         className="w-full lg:w-1/2"
@@ -62,7 +62,7 @@ const SocialMediaPresence = () => {
                     >
                         <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl group">
                             <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/50 via-fuchsia-900/30 to-transparent z-10 
-                                           transition-all duration-500" />
+                            transition-all duration-500" />
                             <Image
                                 src="/images/photo4.jpg"
                                 alt="Customer Support"
@@ -94,7 +94,7 @@ const SocialMediaPresence = () => {
                                     Follow Us On Social Media
                                 </span>
                             </motion.h2>
-                            <p className="text-gray-400 text-sm sm:text-base md:text-lg px-4">
+                            <p className="text-gray-400 text-base md:text-lg ">
                                 Stay connected with us and never miss an update about our latest events and latest projects and services.
                             </p>
                         </div>

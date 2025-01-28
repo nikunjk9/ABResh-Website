@@ -93,8 +93,8 @@ export const Testimonials = () => {
         <section className="py-16 md:py-20 bg-black">
             <div className="container mx-auto xl:px-20">
                 <div className="text-center mb-4 md:mb-8">
-                    <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold text-transparent mb-4 text-white">
-                        What They Say
+                    <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold  mb-4 text-white">
+                        Testimonials
                     </h2>
                     <p className="max-w-xl mx-auto text-base sm:text-xl md:text-lg text-gray-400 px-6">
                         Discover how our innovative events have transformed our clients business strategies.

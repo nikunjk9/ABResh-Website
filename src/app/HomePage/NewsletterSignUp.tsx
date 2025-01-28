@@ -13,7 +13,7 @@ const NewsletterSignup: FC = () => {
                     
                     {/* Text Section */}
                     <div className="md:w-2/5 text-center md:text-left">
-                        <p className="text-gray-300 text-base md:text-lg leading-relaxed px-2">
+                        <p className="text-gray-300 text-base md:text-lg leading-relaxed px-2 md:px-0">
                             Subscribe to our newsletter for exclusive updates, the latest technology, and cutting-edge gaming insights. Stay ahead of the curve with our curated content delivered straight to your inbox.
                         </p>
                     </div>

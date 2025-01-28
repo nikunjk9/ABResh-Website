@@ -83,7 +83,7 @@ export const DigitalMarketing = () => {
     }, [selectedCardIndex, isHovered]);
 
     return (
-        <section className="py-12 overflow-x-clip -mt-4 md:-mt-8 ml-3 md:ml-12 md:mr-6">
+        <section className="py-12 overflow-x-clip -mt-4 md:-mt-8 ml-3 md:ml-12  md:mr-6">
             <div className="container py-8 text-white">
                 <h2 className="text-center text-white font-bold text-4xl md:text-5xl lg:text-6xl tracking-tighter">
                     Digital Marketing

@@ -190,7 +190,7 @@ const HelpSection: React.FC = () => {
     ];
 
     return (
-        <section className="relative bg-black min-h-screen py-20 px-4 flex items-center overflow-hidden">
+        <section className="relative bg-black min-h-screen py-20 mb-10 px-4 flex items-center overflow-hidden">
             <div className="absolute inset-0 opacity-20">
                 <motion.div
                     animate={{
@@ -224,13 +224,13 @@ const HelpSection: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-8 md:mb-16"
+                    className="text-center mb-8 md:mb-12"
                 >
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-4xl md:text-6xl tracking-tight font-bold mb-4 md:mb-6  text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400"
+                        className="text-4xl md:text-6xl tracking-tight font-bold mb-4 md:mb-5  text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400"
                     >
                         We&apos;re here to help
                     </motion.h2>
@@ -238,7 +238,7 @@ const HelpSection: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="text-sm sm:text-base md:text-lg px-4 text-gray-400 max-w-3xl mx-auto "
+                        className="text-base md:text-lg px-4 text-gray-400 max-w-xl mx-auto "
                     >
                         Reach out through any of these channels ask question, get solution and we&apos;ll be happy to assist you.
                     </motion.p>
